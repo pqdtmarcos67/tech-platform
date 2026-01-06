@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card" style="border: none; background: transparent; padding: 0;">
+
+  <header style="margin-bottom: 30px;">
+    <h1 class="h1" style="font-size: 2.8rem; margin-bottom: 10px;">{{ page_title }}</h1>
+    <p class="p" style="font-size: 1.2rem; color: #cbd5e0; max-width: 900px;">{{ page_subtitle }}</p>
+
+    <div class="badges" style="margin-top: 20px;">
+      {% for t in tags %}
+        <span class="badge" style="background: rgba(0, 120, 212, 0.1); border: 1px solid #0078d4; color: #60a5fa;">{{ t }}</span>
+      {% endfor %}
+    </div>
+  </header>
+
+  <div class="grid grid--2" style="gap: 25px; align-items: start;">
+
+    <div class="card" style="background: #1a202c; border: 1px solid #2d3748;">
+      <h2 class="h2" style="display: flex; align-items: center; gap: 10px;">
+        🎯 Para quem é
+      </h2>
+      <ul class="list" style="margin-bottom: 30px;">
+        {% for item in for_who %}
+          <li style="margin-bottom: 8px;">{{ item }}</li>
+        {% endfor %}
+      </ul>
+
+      <div class="hr" style="opacity: 0.1;"></div>
+
+      <h2 class="h2" style="display: flex; align-items: center; gap: 10px;">
+        📚 O que você vai dominar
+      </h2>
+      <ul class="list">
+        {% for item in learn %}
+          <li style="margin-bottom: 8px;">{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="card" style="background: #1a202c; border: 1px solid #2d3748;">
+      <h2 class="h2">⚡ Nossa Recomendação</h2>
+
+      {% if hotmart_url %}
+        <div style="background: rgba(72, 187, 120, 0.1); padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+          <p class="p" style="font-size: 0.9rem; margin-bottom: 15px;">
+            Este curso passou pela nossa curadoria técnica. Ao adquirir pelo botão abaixo, você apoia nosso trabalho sem pagar nada a mais por isso.
+          </p>
+          <a class="btn" href="{{ hotmart_url }}" target="_blank" rel="nofollow sponsored noopener"
+             style="display: block; text-align: center; background: #48bb78; color: white; text-decoration: none; font-weight: bold; padding: 14px;">
+            Garanta seu acesso oficial
+          </a>
+        </div>
+      {% else %}
+        <div style="background: rgba(245, 101, 101, 0.1); padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+          <p class="p" style="color: #feb2b2;"><b>Atenção:</b> O link oficial ainda não foi configurado para este módulo.</p>
+        </div>
+      {% endif %}
+
+      <div class="grid grid--2" style="gap: 15px; margin-top: 10px;">
+        <div>
+          <h3 style="color: #48bb78; font-size: 1.1rem; margin-bottom: 10px;">✅ Prós</h3>
+          <ul class="list" style="font-size: 0.9rem; padding-left: 15px;">
+            {% for item in pros %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div>
+          <h3 style="color: #f56565; font-size: 1.1rem; margin-bottom: 10px;">❌ Contras</h3>
+          <ul class="list" style="font-size: 0.9rem; padding-left: 15px;">
+            {% for item in cons %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top: 30px; background: rgba(255, 255, 255, 0.02);">
+    <h2 class="h2">📖 Aprofunde seu conhecimento</h2>
+    <p class="p">Selecionamos estes posts relacionados para complementar seu estudo:</p>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 15px;">
+      {% for link in related %}
+        <a href="{{ link.href }}" style="color: #60a5fa; text-decoration: none; border-bottom: 1px dashed #60a5fa;">
+          {{ link.label }} →
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

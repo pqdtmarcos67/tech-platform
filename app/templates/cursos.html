@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="section">
+  <div style="margin-bottom: 40px;">
+    <h1 class="h1" style="font-size: 2.5rem; margin-bottom: 12px;">Curadoria de Conhecimento</h1>
+    <p class="p" style="font-size: 1.15rem; max-width: 800px; color: #cbd5e0;">
+      Não perca tempo com cursos genéricos. Selecionamos as melhores trilhas do mercado com análises detalhadas de <strong>custo-benefício</strong>, <strong>prós</strong>, <strong>contras</strong> e o público ideal para cada etapa da sua carreira.
+    </p>
+  </div>
+
+  <div class="grid grid--3" style="gap: 20px;">
+    <a class="card card--interactive" href="{{ url_for('main.cursos_azure') }}" style="text-decoration: none; border-top: 4px solid #0078d4; transition: transform 0.2s;">
+      <div style="display: flex; flex-direction: column; height: 100%;">
+        <h2 class="h2" style="color: #0078d4; margin-bottom: 8px;">Cloud Azure</h2>
+        <p class="p" style="flex-grow: 1; font-size: 0.95rem;">
+          Especialize-se na nuvem da Microsoft. Guia completo para <strong>AZ-900</strong>, <strong>AZ-104</strong> e arquitetura de soluções.
+        </p>
+        <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.8rem; font-weight: bold; text-transform: uppercase; color: #718096;">Explorar Trilhas</span>
+          <span class="btn btn--ghost" style="padding: 6px 12px; pointer-events: none;">Abrir →</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="card card--interactive" href="{{ url_for('main.cursos_aws') }}" style="text-decoration: none; border-top: 4px solid #FF9900; transition: transform 0.2s;">
+      <div style="display: flex; flex-direction: column; height: 100%;">
+        <h2 class="h2" style="color: #FF9900; margin-bottom: 8px;">Cloud AWS</h2>
+        <p class="p" style="flex-grow: 1; font-size: 0.95rem;">
+          Domine o provedor de nuvem mais utilizado no mundo. Foco em <strong>Cloud Practitioner</strong> e <strong>Solutions Architect</strong>.
+        </p>
+        <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.8rem; font-weight: bold; text-transform: uppercase; color: #718096;">Explorar Trilhas</span>
+          <span class="btn btn--ghost" style="padding: 6px 12px; pointer-events: none;">Abrir →</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="card card--interactive" href="{{ url_for('main.cursos_dev') }}" style="text-decoration: none; border-top: 4px solid #44b78b; transition: transform 0.2s;">
+      <div style="display: flex; flex-direction: column; height: 100%;">
+        <h2 class="h2" style="color: #44b78b; margin-bottom: 8px;">Dev & Backend</h2>
+        <p class="p" style="flex-grow: 1; font-size: 0.95rem;">
+          Do código ao deploy. Especializações em <strong>Flask</strong>, APIs robustas e engenharia de software moderna.
+        </p>
+        <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.8rem; font-weight: bold; text-transform: uppercase; color: #718096;">Explorar Trilhas</span>
+          <span class="btn btn--ghost" style="padding: 6px 12px; pointer-events: none;">Abrir →</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<style>
+  .card--interactive:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+</style>
+{% endblock %}

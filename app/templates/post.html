@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card article">
+  <h1 class="h1">{{ post.title }}</h1>
+  <p class="p">{{ post.description }}</p>
+  <div class="hr"></div>
+
+  <div class="article">
+    {{ post.html|safe }}
+  </div>
+
+  <div class="hr"></div>
+  <p class="muted">
+    Aviso: este conteúdo pode conter links de afiliado (Hotmart). Você não paga nada a mais.
+  </p>
+</div>
+{% endblock %}

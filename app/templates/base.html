@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>{{ meta.title or "Tech Platform" }}</title>
+  <meta name="description" content="{{ meta.description or '' }}">
+  <link rel="canonical" href="{{ meta.canonical or request.url }}">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ meta.og_title or meta.title }}">
+  <meta property="og:description" content="{{ meta.og_description or meta.description }}">
+  <meta property="og:url" content="{{ meta.canonical or request.url }}">
+  {% if meta.og_image %}
+  <meta property="og:image" content="{{ meta.og_image }}">
+  {% endif %}
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ meta.twitter_title or meta.og_title or meta.title }}">
+  <meta name="twitter:description" content="{{ meta.twitter_description or meta.og_description or meta.description }}">
+  {% if meta.og_image %}
+  <meta name="twitter:image" content="{{ meta.og_image }}">
+  {% endif %}
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"/>
+
+  {# ======== AD SENSE (ATIVAR DEPOIS) ========
+     1) Crie sua conta AdSense e pegue o script oficial
+     2) Cole abaixo substituindo o SEU-CODE
+     3) Evite ativar antes de ter conteúdo (10+ posts) e páginas obrigatórias
+  #}
+  {#
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-SEU-CODE"
+     crossorigin="anonymous"></script>
+  #}
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header__row">
+      <a class="brand" href="{{ url_for('main.home') }}">Tech Platform</a>
+
+      <nav class="nav">
+        <a href="{{ url_for('main.cursos') }}">Cursos</a>
+        <a href="{{ url_for('main.blog') }}">Blog</a>
+        <a href="{{ url_for('main.sobre') }}">Sobre</a>
+        <a href="{{ url_for('main.contato') }}">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__row">
+      <small>
+        © {{ (now().year if now else 2026) }} Tech Platform •
+        <a href="{{ url_for('main.privacidade') }}">Política de Privacidade</a>
+      </small>
+      <small class="muted">
+        Algumas páginas podem conter links de afiliado. Você não paga nada a mais.
+      </small>
+    </div>
+  </footer>
+</body>
+</html>

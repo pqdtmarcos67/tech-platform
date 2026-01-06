@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero" style="padding: 80px 20px; text-align: center; display: flex; flex-direction: column; align-items: center;">
+
+  <h1 class="h1" style="font-size: 3rem; line-height: 1.1; margin-bottom: 20px; max-width: 800px;">
+    Domine a Nuvem e <br><span style="color: var(--primary-color);">Acelere sua Carreira Dev</span>
+  </h1>
+
+  <p class="p" style="font-size: 1.25rem; max-width: 700px; margin: 0 auto 30px auto; color: #cbd5e0;">
+    Do código ao deploy: guias práticos sobre <strong>Flask</strong>, <strong>Azure</strong> e as certificações que o mercado realmente valoriza. Economize meses de estudo com trilhas objetivas.
+  </p>
+
+  <div class="badges" style="display: flex; justify-content: center; gap: 10px; margin-bottom: 35px; flex-wrap: wrap;">
+    <span class="badge">Azure (AZ-900/104)</span>
+    <span class="badge">Flask & Python</span>
+    <span class="badge">AWS</span>
+    <span class="badge">Java Cloud</span>
+    <span class="badge">Kubernetes</span>
+  </div>
+
+  <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+    <a class="btn" href="{{ url_for('main.cursos') }}" style="padding: 12px 28px;">Explorar Trilhas de Estudo</a>
+    <a class="btn btn--ghost" href="{{ url_for('main.blog') }}" style="padding: 12px 28px;">Acessar Conteúdo Gratuito</a>
+  </div>
+</section>
+
+<hr style="border: 0; border-top: 1px solid #2d3748; margin: 40px 0; opacity: 0.3;">
+
+<section class="grid grid--2">
+  </section>
+
+<hr style="border: 0; border-top: 1px solid #eee; margin: 40px 0;">
+
+<section class="grid grid--2">
+  <div class="card" style="border-left: 4px solid var(--primary-color);">
+    <h2 class="h2">O Mapa da Aprovação</h2>
+    <p class="p">Não sabe por onde começar? Siga este roteiro comprovado para conquistar sua base em Cloud:</p>
+    <ul class="list" style="list-style: none; padding-left: 0;">
+      <li style="margin-bottom: 10px;">✅ <strong>AZ-900:</strong> Fundamentos Microsoft Azure</li>
+      <li style="margin-bottom: 10px;">✅ <strong>AWS Cloud Practitioner:</strong> Visão Geral de Mercado</li>
+      <li style="margin-bottom: 10px;">🚀 <strong>Primeiro Deploy:</strong> Projeto Real com Flask no Azure</li>
+    </ul>
+    <a href="{{ url_for('main.post', slug='az900') }}" style="font-weight: bold; text-decoration: none;">Ver detalhes da trilha →</a>
+  </div>
+
+  <div class="card">
+    <h2 class="h2">Por que confiar em nossas reviews?</h2>
+    <p class="p">
+      Analisamos cursos com base na ementa técnica e aplicabilidade no mercado real.
+      Nosso compromisso é com a sua transparência e economia de tempo.
+    </p>
+    <p class="p" style="font-size: 0.85rem; opacity: 0.8;">
+      Mantemos o projeto via links de afiliado, sem custo adicional para você.
+    </p>
+    <a class="btn btn--ghost" style="padding: 8px 16px; font-size: 0.9rem;" href="{{ url_for('main.privacidade') }}">Nossa Política Ética</a>
+  </div>
+</section>
+{% endblock %}

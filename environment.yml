@@ -1,0 +1,16 @@
+name: tech_affiliate
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - flask
+      - flask-sqlalchemy
+      - flask-migrate
+      - flask-login
+      - python-dotenv
+      - gunicorn
+      - markdown
+      - bleach
+      - requests

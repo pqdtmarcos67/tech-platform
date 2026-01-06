@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Env / secrets
+.env
+.env.*
+instance/
+
+# Conda
+.env/
+.conda/
+*.conda
+
+# Flask
+*.sqlite
+*.db
+
+# VSCode / PyCharm
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
